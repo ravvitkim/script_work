@@ -69,3 +69,73 @@ console.log(`ive3 : ${ive3}`)
 
 let obj = {name : '아무개'}
 let obj2 = {...obj}
+
+// 8) join() 함수
+// 배열 내 자료를 , 로 구분한 후 문자열로 반환
+// ive를 iveMember로 하드카피하기
+console.log('// 8) join() 함수')
+let iveMembers = [...ive]
+console.log(iveMembers.join('/')) 
+
+// 9) 정렬하기 
+console.log('9) 정렬하기 - sort() : 원본 수정함 ')
+let sortIve = [...ive]
+// 숫자,문자 모두 문자로 바꾸어서 utf-8로 비교
+sortIve.sort()
+console.log(sortIve)
+
+// 10) 정렬하기 
+console.log('10) 역순정렬하기 - reverse() : 원본 수정함 ')
+// 숫자,문자 모두 문자로 바꾸어서 utf-8로 비교
+sortIve.reverse()
+console.log(sortIve)
+// 11) sort() 함수로 오름차순, 내림차순 정렬
+console.log('11) sort Asc/Desc...')
+let numbers = [1,9,7,5,3]
+console.log(numbers);
+// numbers.sort();
+// console.log(numbers);
+
+// 오름차순 정렬
+// 반환값 규칙
+// 양수(1): a가 b 뒤로 가야함
+// 음수(-1): a가 b 앞으로 가야함
+// 0:현재 순서 유지
+numbers.sort((a , b) => {
+return a < b? 1 : -1;
+})
+console.log(numbers)
+
+// 12) 배열 중 기준 잡아서 정렬하기
+const k_group = [
+  {
+    group : '아이브',
+    name : ['장원영','안유진','이서'],
+    count : 5,
+  },
+  {
+    group : '에스파',
+    name : ['카리나','원터','지젤','닝닝'],
+    count : 4,
+  },
+  {
+    group : '케플러',
+    name : ['최유진','마시로','샤오팅'],
+    count : 9,
+  }
+
+]
+console.log('12)그룹이름으로 오름차순 정렬하기')
+console.log(k_group)
+//그룹이름으로 오름차순 정렬하기
+let  copyGroup = [...k_group]
+// 1.아이브 -> ive
+// copyGroup[0].group = 'ive';
+// copyGroup[0].name[2] = '가을';
+
+// console.log(copyGroup)
+copyGroup.sort((a,b) => {
+  return a.group > b.group? 1 : -1;
+})
+console.log(copyGroup)
+
